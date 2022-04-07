@@ -1,0 +1,8 @@
+-Olá :), meu nome é Gabriel, tenho 21 anos, vou contar um pouco da minha história... 
+
+- Quando tinha 13 anos de idade ganhei meu primeiro computador (tenho até hoje kkk), minha mãe comprou da minha Tia, porém ele veio todo zuado, o computador já tinha ido para o conserto, famoso barato que saiu caro kkk. Resumindo, fiquei muito empolgado para mexer nele, o PC estava sem drives, logo não conseguia conectar na internet, por sorte eu tinha um tablet e comecei a pesquisar até conseguir deixar o PC
+"decente", depois de 1 semana tentando consegui e comecei a usar, foi minha primeira experiência "consertando" um PC.
+
+- Meu primeiro contato com a programação foi indireto, cheguei a fazer um curso de TI em 2015/2017, tinha um professor  que sempre agitava pra esse lado dizendo: -"Quem sabe programar está a frente de quem só usa o PC", "Quem entende de eletrônica está a frente de quem só troca peça", dai surgiu o interesse em ser hacker, delirio de adolescente kkk, cheguei a pesquisar mas não peguei firme nos estudos, passou o tempo e em 2021, na metade do ano, comecei a estudar python por conta, quebrei bastante a cabeça para internalizar os conceitos, estudei por volta de 3 meses e parei. No começo desse ano retomei os estudos, decidi que programação é o que eu quero para minha vida, estudei HTML, CSS e JS, agora estou na Labenu, escolhi a escola  por indicação de um amigo, concluiu o curso de front end e me apresentou, achei bastante interessante e espero que minha jornada de aprendizado seja divertida e proveitosa, quero conhecer pessoas novas, quem sabe amigos para vida.
+- 
+
