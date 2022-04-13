@@ -39,17 +39,13 @@ alert(`Olá ${nome} você tem ${idade} anos`)
 
 // Exercício programa - 2
 
-let gostaDeCafe = 'Você gosta de café?'
-let estaBem = 'Você está bem ?'
-let gostaDeEsporte = 'Você pratica algum esporte?'
+let gostaDeCafe = prompt('Você gosta de café?')
+let musica = prompt('Curte ouvir música?')
+let gostaDeEsporte = prompt('Você pratica algum esporte?')
 
-let resp1 = 'sim'
-let resp2 = 'sim'
-let resp3 = 'não'
-
-console.log(gostaDeCafe, resp1)
-console.log(estaBem, resp2)
-console.log(gostaDeEsporte, resp3)
+console.log('Você gosta de café?', gostaDeCafe)
+console.log('Curte ouvir música?', estaDia)
+console.log('Você pratica algum esporte?', gostaDeEsporte)
 
 
 // Exercício programa - 3
@@ -62,7 +58,7 @@ c = a
 a = b
 b = c
 
-console.log(a,b,c)
+console.log(a,b)
 
 // Desafio
 
