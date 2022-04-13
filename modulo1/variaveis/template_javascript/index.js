@@ -64,3 +64,16 @@ b = c
 
 console.log(a,b,c)
 
+// Desafio
+
+let n1 = prompt('Digite um número: ')
+let n2 = prompt('Digite outro número: ')
+
+n1 = Number(n1)
+n2 = Number(n2)
+let soma = n1 + n2
+alert(`A soma entre ${n1} + ${n2} = ${soma}`)
+
+let multiplicar = n1 * n2
+alert(`A multiplicação entre ${n1} x ${n2} = ${multiplicar} `)
+
