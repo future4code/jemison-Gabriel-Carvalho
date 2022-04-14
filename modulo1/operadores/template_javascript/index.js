@@ -27,7 +27,7 @@ console.log(soma)
 */
 
 // Primeiro programa
-/*
+
 let idadePessoa = Number(prompt('Qual a sua idade? '))
 let idadeAmigo = Number(prompt('Qual a idade do seu melhor amigo(a)?'))
 
@@ -36,20 +36,19 @@ let diferencaIdade = idadePessoa - idadeAmigo
 
 console.log(`Sua idade é maior que a do seu amigo? ${maiorIdade}`)
 console.log(`Diferença de idade ${diferencaIdade} anos`)
-*/
+
 
 // Segundo programa
-/*
+
 let numPar = Number(prompt('Insira um número PAR: '))
 let restoDivisao = numPar % 2
 console.log(`O resto foi ${restoDivisao}`)
 
 // todo número par divido por dois resulta em resto zero
 // todo número ímpar dividido por dois resulta em resto um
-*/
 
 // Terceiro programa
-/*
+
 let idade = Number(prompt('Qual a sua idade?'))
 idade = idade * 12
 console.log(`Sua idade tem ${idade} meses`)
@@ -59,10 +58,10 @@ console.log(`Sua idade tem ${idade} dias`)
 
 idade = idade * 8760
 console.log(`Sua idade tem ${idade} horas`)
-*/
+
 
 // Quarto programa
-/*
+
 const num1 = Number(prompt('Informe um numero: '))
 const num2 = Number(prompt('Informe outro numero: '))
 
@@ -77,9 +76,12 @@ console.log('O primeiro número é divisivel pelo segundo?', divisivelPorN1)
 
 let divisivelPorN2 = num2 / num1 % 2 === 0
 console.log('O segundo número é divisivel pelo primeiro?', divisivelPorN2)
-*/
+
 
 // DESAFIOS
+
+// Desafio 1
+
 let grausFahrenheit = 77
 let kelvin = (grausFahrenheit - 32)*(5/9) + 273.15
 console.log(`${grausFahrenheit}°F => ${kelvin}°K`)
@@ -99,3 +101,17 @@ grausFahrenheit = (grausCelsius2) * (9/5) + 32
 console.log(`${grausCelsius2}°C => ${grausFahrenheit}°F`)
 kelvin = grausCelsius2 + 273.15
 console.log(`${grausCelsius2}°C => ${kelvin}°K`)
+
+
+// Desafio 2
+
+let quilowattHora = 280
+let consumo = 280 * 0.05
+
+console.log(`valor total do consumo = R$${consumo}`)
+
+let desconto = (15 / 100) * consumo
+let novoValor = consumo - desconto
+console.log(`com 15% de desconto o valor a pagar será R$${novoValor}`)
+
+
