@@ -132,7 +132,7 @@ function checaRenovacaoRG() {
   let checarSituacao = anoAtual - anoDeEmissaoDoRG
 
   let renovarEm5Anos = idade <= 20 && checarSituacao >= 5 
-  let renovarEm10Anos = idade <= 20 || idade <= 50 && checarSituacao >= 10
+  let renovarEm10Anos = idade <= 20 && idade <= 50 && checarSituacao >= 10
   let renovarEm15Anos = idade > 50 && checarSituacao >= 15
 
   console.log(renovarEm5Anos)
