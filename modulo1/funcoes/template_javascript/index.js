@@ -130,3 +130,25 @@ function dividir(num1, num2) {
 dividir(n1, n2)
 
 */
+
+// Desafios
+
+/*
+let imprime = (somar) => console.log(somar)
+
+
+
+let somar = (n1, n2) => n1 + n2
+
+imprime(somar(5,3))
+*/
+
+
+/*
+function hipotenusa(cat1, cat2) {
+    let hip = cat1**2 + cat2**2
+    hip = Math.sqrt(hip)
+    console.log(hip)
+}
+hipotenusa(9,12)
+*/
