@@ -131,13 +131,9 @@ function soma(num1, num2) {
     let idade = anoAtual - anoDeNascimento
     let checarSituacao = anoAtual - anoDeEmissaoDoRG
   
-    let renovarEm5Anos = idade <= 20 && checarSituacao >= 5 
-    let renovarEm10Anos = idade <= 20 && idade <= 50 && checarSituacao >= 10
-    let renovarEm15Anos = idade > 50 && checarSituacao >= 15
-  
-    console.log(renovarEm5Anos)
-    //console.log(renovarEm10Anos)
-    //console.log(renovarEm15Anos)
+    let teste = idade <= 20 && checarSituacao >= 5 ||  idade <= 50 && checarSituacao >= 10 || idade > 50 && checarSituacao >= 15
+    
+    console.log(teste)
   }
   
   // EXERCÍCIO 14
