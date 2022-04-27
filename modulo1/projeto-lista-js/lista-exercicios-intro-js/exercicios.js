@@ -2,6 +2,7 @@
 
 // EXERCÍCIO 0A
 function soma(num1, num2) {
+
   // implemente sua lógica aqui
   return num1 + num2
 }
@@ -14,7 +15,8 @@ function imprimeMensagem() {
   console.log(mensagem)
 }
 
-// EXERCÍCIOS PARA FAZER ------------------------------------------------------------------
+// EXERCÍCIOS PARA FAZER ---------------------------------------------------------------
+
 
 // EXERCÍCIO 01
 function calculaAreaRetangulo() {
@@ -160,3 +162,4 @@ function checaValidadeInscricaoLabenu() {
   console.log(horarioCurso)
   console.log(teste)
 }
+
