@@ -68,7 +68,7 @@ Deseja comprar mais uma carta? `)
       
       confirm('Suas Cartas são ' + baralhoFinalUsuario + '.' + ' Sua pontuação foi ' + pontosUsuario  + "\n" + 'As cartas do computador são ' + baralhoFinalPc + '.' + ' Pontuação do computador : ' + pontosPc + '\n' + 'O computador venceu!')
 
-   }else if(pontosPc > 21 || usuarioPontos <= 21){
+   }else if(pontosPc > 21 && pontosUsuario <= 21){
       
       confirm('Suas Cartas são ' + baralhoFinalUsuario + '.' + ' Sua pontuação foi' + pontosUsuario  + "\n" + 'As cartas do computador são ' + baralhoFinalPc + '.' + ' Pontuação do computador : ' + pontosPc + '\n' + 'O jogador venceu!')
 
