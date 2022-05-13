@@ -127,10 +127,10 @@ function retornaPessoaAnonimizada(pessoa) {
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
-   let pessoasPermitidas = pessoas.filter((altura) => {
-        return altura.altura >= 1.5
-   }).filter((idade) => {
-    return idade.idade > 14 && idade.idade < 60
+   let pessoasPermitidas = pessoas.filter((pessoa) => {
+        return pessoa.altura >= 1.5
+   }).filter((pessoa) => {
+    return pessoa.idade > 14 && pessoa.idade < 60
     })
 
    return pessoasPermitidas
@@ -138,12 +138,19 @@ function retornaPessoasAutorizadas(pessoas) {
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {
-    
+    return pessoas.filter((pessoa) => {
+        return (pessoa.idade <= 14 &&  pessoa.idade >= 60 || pessoa.altura < 1.5 ||pessoa.altura > 1.5 && pessoa.idade <= 14 || pessoa.idade >= 60)
+    })
 }
+
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
-
+    let saldo = contas.reduce((acumulador, numero) => {
+        return (acumulador + numero.compras, 0)
+    })
+    return saldo
+   
 }
 
 // EXERCÍCIO 15A
