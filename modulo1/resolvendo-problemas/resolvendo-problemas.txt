@@ -1,0 +1,7 @@
+- **Exercícios de fixação do conhecimento**
+    
+    //Faça um resumo sobre quais são os 7 passos fundamentais para a resolução de problemas e como eles podem nos ajudar a solucionar nossos desafios de programação.
+    
+    Resolução de Problemas
+    - Para uma melhor compreensão e resolução dos problemas é necessário ler atentamente ao enunciado dos exercícios/problema proposto, ler quantas vezes for necessário e testar as lógicas pensadas, caso contrario usar o google para se basear e conseguir resolver. Outro ponto é extrair as informações do enunciado, informações cruciais, através delas começar a construir uma lógica.
+    - Se estiver com muita dificuldade, pode tentar um esquema de desenho ou fluxo-grama, organizar as ideias em um fluxo ajuda visualizar a solução e depois transformar em código. Logo após desenhar, chega a parte de teste, quando o código fica feio, mesmo ficando feio o importante é chegar na solução. Feito todos os passos anteriores, após aprender mais contéudo podemos refatorar o código, com mais conhecimento conseguimos remover "códigos desnecessários", isso é algo que vem com o tempo e experiência, refatorar nos ajuda a deixar legível e de fácil manutenção.
