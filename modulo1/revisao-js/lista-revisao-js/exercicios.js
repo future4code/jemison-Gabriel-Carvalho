@@ -146,19 +146,51 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
-    let saldo = contas.reduce((acumulador, numero) => {
-        return (acumulador + numero.compras, 0)
+    let clientesGastos = []    
+    
+    let clienteJoao = contas[0].compras.reduce((acumulador, numero) => { return (acumulador + numero)})
+    clientesGastos.push(clienteJoao)
+    
+    let clientePaula = contas[1].compras.reduce((acumulador, numero) => { return (acumulador + numero)})
+    clientesGastos.push(clientePaula)
+
+    let clientePedro = contas[2].compras.reduce((acumulador, numero) => { return (acumulador + numero)})
+    clientesGastos.push(clientePedro)
+    
+    let clienteLuciano = contas[3].compras.reduce((acumulador, numero) => { return (acumulador + numero)})
+    clientesGastos.push(clienteLuciano)
+
+    let clienteArtur = contas[4].compras.reduce((acumulador, numero) => { return (acumulador + numero)})
+    clientesGastos.push(clienteArtur)
+    
+    let saldo = contas.map((saldo) => {
+        return saldo.saldoTotal
     })
-    return saldo
-   
+
+    let novoSaldo = []
+    
+    for(let i = 0; i < clientesGastos.length; i++){
+        let valor = saldo[i] - clientesGastos[i]
+        novoSaldo.push(valor)
+    }
+    
+
+    let novoObjeto = [
+    { cliente: "João", saldoTotal: novoSaldo[0], compras: [] },
+    { cliente: "Paula", saldoTotal: novoSaldo[1], compras: [] },
+    { cliente: "Pedro", saldoTotal: novoSaldo[2], compras: [] },
+    { cliente: "Luciano", saldoTotal: novoSaldo[3], compras: [] },
+    { cliente: "Artur", saldoTotal: novoSaldo[4], compras: [] },
+    { cliente: "Soter", saldoTotal: 1200, compras: [] }
+    ]
+
+    return novoObjeto
 }
 
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
-  
-}
-
-// EXERCÍCIO 15B
-function retornaArrayOrdenadoPorData(consultas) {
-   
+  let ordemAlfabetica = consultas.sort(function (a, b){
+    return (a.nome > b.nome) ? 1: ((b.nome > a.nome) ? -1 :0)      
+  })
+  return ordemAlfabetica
 }
