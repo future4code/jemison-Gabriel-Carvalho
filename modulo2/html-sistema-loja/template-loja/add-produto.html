@@ -5,42 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="imagens/loja-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
     <title>Adicionar Produto</title>
 </head>
 <body>
     <header>
-        <p>Games NW</p>
-    </header>
+        
+        <h1 class="titulo-topo">Games NW</h1>
     
-    <nav>
-        <a href="index.html">Página Inicial</a>
-        <a href="ctrl-estoque.html">Controle de Estoque</a>
-        <a href="add-produto.html">Adicionar Produto</a>
-        <a href="funcionarios.html">Funcionários</a>
-    </nav>
+        <nav>
+            <a href="index.html">Página Inicial</a>
+            <a href="ctrl-estoque.html">Controle de Estoque</a>
+            <a href="add-produto.html">Adicionar Produto</a>
+            <a href="funcionarios.html">Funcionários</a>
+        </nav>
+
+    </header>
 
     
-    <h2>Adicionar Produto</h2>
-    <form action="">
-            <label for="link-foto">Link para foto: </label>
+    <h2 class="titulo-produto">Adicionar Produto</h2>
+    
+    <div class="box-form">
+        <form action="enviar-para-servidor" class="formulario">
+        
+            <label for="link-foto">Link para foto:</label>
             <input type="url" id="link-foto" name="link-foto">
             <br>
-     
-            <label for="descricao">Descrição do produto: </label>
+        
+            <label for="descricao">Descrição do produto:</label>
             <input type="text" id="descricao" name="descrição">
             <br>
-            
-            <label for="preco">Preço (em R$): </label>
+        
+            <label for="preco">Preço (em R$):</label>
             <input type="number" id="preco" name="preço">
             <br>
-
-            <label for="quantidade">Quantidade disponível: </label>
+            
+            <label for="quantidade">Quantidade disponível:</label>
             <input type="number" id="quantidade"  name="quantidade">
             <br>
-            
-            <button type="button" value="Adicionar">Adicionar</button>
-
-    </form>
+        
+            <button class="botao" type="submit" value="#">Adicionar</button>
+        </form>
+    </div>
 
 </body>
 </html>
