@@ -40,11 +40,37 @@
 
 
 .itens-menu{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
     list-style: none;
+    margin: 10px 0px 0px 20px;
+}
+
+
+.itens-menu li{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+
+.itens-menu p{
+    display: inline;
+    margin: 0px 20px;
 }
 
 .itens-menu img{
     width: 20px;
     height: 20px;
+}
+
+.icones{
+    margin: 10px 0px;
+}
+
+.seta{
+    position: absolute;
+    left: 250px;
 }
 
