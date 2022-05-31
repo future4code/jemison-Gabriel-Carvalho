@@ -29,5 +29,22 @@
     padding: 5px;
 }
 
+.menu{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 300px;
+    height: 600px;
+    background-color: #f2d0e0;
+}
 
+
+.itens-menu{
+    list-style: none;
+}
+
+.itens-menu img{
+    width: 20px;
+    height: 20px;
+}
 
