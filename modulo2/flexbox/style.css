@@ -33,7 +33,7 @@
     display: flex;
     flex-direction: column;
     align-items: left;
-    width: 300px;
+    width: 280px;
     height: 600px;
     background-color: #f2d0e0;
 }
@@ -72,6 +72,44 @@
 .seta{
     position: absolute;
     left: 250px;
+}
+
+
+.container-principal{
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.card{
+    display: flex;
+    width: 200px;
+    height: 260px;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 25px;
+    box-shadow: 1px 1px 1px darkgray;
+}
+
+.card img{
+    width: 170px;
+    height: 200px;
+}
+
+.card h1{
+    font-size: 20px;
+    font-weight: bold;
+    padding:6px;
+
+}
+
+.card p{
+    font-size: 15px;
+    text-align: center;
 }
 
 #rodape{
