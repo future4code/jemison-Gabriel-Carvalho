@@ -16,7 +16,7 @@
 }
 
 .cabecalho input{
-    margin: 12px;
+    margin: 15px;
     padding: 10px;
    
 }
@@ -25,4 +25,15 @@
     margin: 5px;
     padding: 5px;
    
+}
+
+.container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr)
+}
+
+.box-videos{
+    width: 150px;
+    height: 150px;
 }
