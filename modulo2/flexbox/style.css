@@ -1,0 +1,123 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.header{
+    display: flex;
+    width: 100%;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: mediumvioletred;
+}
+
+#titulo-principal{
+    margin-right: 75%;
+}
+
+#logo-bolo{
+    width: 30px;
+    height: 30px;
+    margin-left: 30px;
+}
+
+#botao{
+    width: 60px;
+    margin-right: 30px;
+    padding: 5px;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 280px;
+    height: 630px;
+    background-color: #f2d0e0;
+}
+
+
+.itens-menu{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    list-style: none;
+    margin: 10px 0px 0px 20px;
+}
+
+
+.itens-menu li{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+
+.itens-menu p{
+    display: inline;
+    margin: 0px 20px;
+}
+
+.itens-menu img{
+    width: 20px;
+    height: 20px;
+}
+
+.icones{
+    margin: 10px 0px;
+}
+
+.seta{
+    position: absolute;
+    left: 250px;
+}
+
+
+.container-principal{
+    width: 600px;
+    height: 630px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.card{
+    display: flex;
+    width: 200px;
+    height: 270px;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 25px;
+    box-shadow: 1px 1px 1px darkgray;
+}
+
+.card img{
+    width: 170px;
+    height: 200px;
+}
+
+.card h1{
+    font-size: 20px;
+    font-weight: bold;
+    padding:6px;
+
+}
+
+.card p{
+    font-size: 15px;
+    text-align: center;
+    padding: 6px;
+}
+
+#rodape{
+    display: flex;
+    width: 100%;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    background-color: mediumvioletred;
+}
