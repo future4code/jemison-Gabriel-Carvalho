@@ -1,0 +1,24 @@
+.principal{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(214, 72, 100);
+}
+
+.minha-foto {
+  width: 30vw;
+  border-radius: 6%;
+  box-shadow: 3px 3px 3px black;
+}
+
+.botao{
+  width: 80px;
+  padding: 5px;
+  border: 1px solid grey;
+  border-radius: 12%;
+  background-color: black;
+  color: aliceblue;
+}
