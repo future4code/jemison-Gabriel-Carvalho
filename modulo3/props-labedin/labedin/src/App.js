@@ -3,6 +3,8 @@ import './App.css';
 import CardGrande from './components/CardGrande/CardGrande';
 import imagem from './components/CardGrande/minhafoto.jpg'
 import ImagemButton from './components/ImagemButton/ImagemButton';
+import CardPequeno from './components/CardPequeno/CardPequeno'
+import icone from './components/CardPequeno/emailicon.png'
 
 function App() {
   return (
@@ -12,12 +14,26 @@ function App() {
         <CardGrande 
           imagem={imagem} 
           nome="Gabriel Marcelino" 
-          descricao="Olá, sou o Gabriel, tenho 21 anos. atualmente estudante na Labenu, entrei no mundo da programação recentemente, porém é algo que sempre tive vontade de aprender, decidi focar nos estudos para esta área."
+          descricao="Olá, sou o Gabriel, tenho 21 anos. atualmente estudante na Labenu, entrei no mundo da programação recentemente, porém é algo que sempre tive vontade de aprender, decidi focar nos estudos para essa área de desenvolvimento web."
         />
         
         <ImagemButton 
           imagem="https://cdn-icons-png.flaticon.com/512/271/271210.png" 
           texto="Ver mais"
+        />
+      </div>
+
+      <div className="page-section-container">
+        <CardPequeno 
+          icone={icone}
+          titulo="Email:"
+          texto="perfilteste@hotmail.com"
+        />
+
+        <CardPequeno
+          icone="https://cdn-icons-png.flaticon.com/128/6948/6948648.png"
+          titulo="Endereço:"
+          texto="Rua da Disney 130"
         />
       </div>
 
@@ -30,7 +46,7 @@ function App() {
         />
         
         <CardGrande 
-          imagem="image-check.png" 
+          imagem="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Sign-check-icon.png/800px-Sign-check-icon.png" 
           nome="Lorem" 
           descricao="
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga veniam necessitatibus ipsa. Corporis doloribus dolore temporibus atque deserunt, repellat voluptatum dolorem nam optio eos voluptatem corrupti aspernatur. Accusantium, delectus quas?" 
@@ -41,7 +57,6 @@ function App() {
         <h2>Minhas redes sociais</h2>
         <ImagemButton 
           imagem="https://d2v9ipibika81v.cloudfront.net/uploads/sites/261/2017/01/facebook-logo-3.png"
-          Link="https://www.facebook.com/gabriel.mac.360"
           texto="Facebook" 
         />        
 

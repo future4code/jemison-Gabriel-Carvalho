@@ -1,0 +1,29 @@
+.small-card-container{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color:  rgb(102, 102, 196);
+    margin: 3% 0;
+    border: 1px solid black;
+}
+
+.small-card-container h4{
+    display: inline;
+    font-size: 1.5em;
+    margin: 0 -1%;
+}
+
+.small-card-container p{
+    display: inline;
+    margin-left: 1%;
+    color: white;
+}
+
+.small-card-container img {
+    width: 60px;
+    margin-left: 20px;
+    border-radius: 50%;
+    padding: 2px;
+}
