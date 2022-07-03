@@ -3,6 +3,7 @@ import './App.css'
 import Logo from './Img/labe-logo.jpg'
 import Inputs from './Components/FormsInput/Inputs.js'
 import {Body, Principal, Header, Imagem, Titulo, Sessao, Footer, Descricao} from './Components/Styles/Styled.js'
+import Mensagens from './Components/Mensagens/Mensagens.js'
 
 function App() {
   return (
@@ -17,13 +18,13 @@ function App() {
 
         <Sessao>
 
-        <Inputs
-            type="text"
-            name="nome"
-            mensagem ="mensagem"
-            button="submit"
-            onClick=""
-          />
+        <Mensagens>
+          <h1>Teste</h1>
+        </Mensagens>
+
+        <Inputs/>
+        
+
 
         </Sessao>
 

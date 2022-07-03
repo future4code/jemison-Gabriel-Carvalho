@@ -1,21 +1,39 @@
-import React from "react"
-import './Input.css'
+import React, {useState} from "react"
+import './InputStyle.js'
+import {Forms, Nome, InputNome, InputMensagem, Mensagem, Enviar, Botao} from './InputStyle.js'
 
 function Inputs(props){
-    return(
-        <div className="forms">
-            <p> Remetente: </p>
-            <label for="nome">
-                <input type={props.type} name={props.name} />
-            </label>
-            
-            <p> Msg: </p>
-            <label for="mensagem">
-                <input type={props.type} name={props.mensagem} />
-            </label>
 
-            <button type={props.button} onClick={props.onClick}>Enviar Mensagem</button>
-        </div>
+
+    // Lógica da aplicação
+    
+     const [name, setName] = useState('')
+     const [message, setMessage] = useState('')
+
+
+
+    return(
+        <Forms>
+            
+            <Nome>
+                Remetente:
+                <label htmlfor="nome">
+                    <InputNome className="nome" type={props.type} name={props.nome} />
+                </label>
+            </Nome>
+            
+            
+            <Mensagem>
+                Msg:
+                <label htmlfor="mensagem">
+                    <InputMensagem type={props.type} name={props.mensagem} />
+                </label>
+            </Mensagem>
+
+            <Enviar>
+                <Botao type="button" value="submit" onClick={props.enviar}>Enviar Mensagem</Botao>
+            </Enviar>
+        </Forms>
     )
 }
 
