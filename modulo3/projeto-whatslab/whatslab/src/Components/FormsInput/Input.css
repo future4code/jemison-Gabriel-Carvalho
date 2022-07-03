@@ -1,0 +1,11 @@
+.forms{
+    display:flex;
+    align-items: center;
+    position: absolute;
+    bottom: 10%;
+    margin: 15px;
+}
+
+.forms input{
+    margin: 10px;
+}
