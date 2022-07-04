@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Mensagens = styled.div `
+export const Tela = styled.div `
     display: flex;
     width: 95%;
     height: 400px;
@@ -9,4 +9,6 @@ export const Mensagens = styled.div `
     margin: 0 auto;
 ` 
 
-export default Mensagens
+export const Mensagens () {
+    
+}
