@@ -8,7 +8,3 @@ export const Tela = styled.div `
     align-items: flex-end;
     margin: 0 auto;
 ` 
-
-export const Mensagens () {
-    
-}
