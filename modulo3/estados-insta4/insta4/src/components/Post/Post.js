@@ -118,7 +118,7 @@ function Post(props){
     if(comentando) {
       componenteComentario = <SecaoComentario onChange ={onChangeComentario} aoEnviar={aoEnviarComentario}/>
     }
-
+     
   return(
     <PostContainer>
       <PostHeader>
