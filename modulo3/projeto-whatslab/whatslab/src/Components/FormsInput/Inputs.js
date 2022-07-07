@@ -7,32 +7,36 @@ function Inputs(props){
 
     // Lógica da aplicação
     
-     const [name, setName] = useState('')
-     const [message, setMessage] = useState('')
+     const [InputName, setInputName] = useState('')
+     const [InputMessage, setInputMessage] = useState('')
 
 
+
+    // Funções de eventos
+
+    const handleInputName = (e) => {
+        setInputName(e.target.value)
+    }
+
+    const handleInputMessage = (e) => {
+        setInputMessage(e.target.value)
+    }
 
     return(
         <Forms>
-            
-            <Nome>
-                Remetente:
-                <label htmlfor="nome">
-                    <InputNome className="nome" type={props.type} name={props.nome} />
-                </label>
-            </Nome>
-            
-            
-            <Mensagem>
-                Msg:
-                <label htmlfor="mensagem">
-                    <InputMensagem type={props.type} name={props.mensagem} />
-                </label>
-            </Mensagem>
+            <label>Remetente:</label>
+            <input 
+                placeholder="Seu Nome"
+                value={InputName}
+                onChange={handleInputName}
+            />
 
-            <Enviar>
-                <Botao type="button" value="submit" onClick={props.enviar}>Enviar Mensagem</Botao>
-            </Enviar>
+            <label>Mensagem:</label>
+            <input 
+                placeholder="Mensagem"
+                value={InputMessage}
+                onChange={handleInputMessage}
+            />
         </Forms>
     )
 }
