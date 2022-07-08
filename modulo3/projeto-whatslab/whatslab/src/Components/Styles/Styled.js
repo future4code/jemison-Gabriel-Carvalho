@@ -8,7 +8,7 @@ export const Body = styled.div `
 export const Principal = styled.div `
     margin: 0 auto;
     width: 70%;
-    height: 45vw;
+    height: 48vw;
     background-color: white;
 `
 
@@ -34,19 +34,8 @@ export const Sessao = styled.div `
     display: flex;
     width: 100%;
     height: 100px;
-`
 
-
-export const Footer = styled.footer `
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 41px;
-    background-color: grey;
-`
-
-export const Descricao = styled.p `
-    font-size: 1.3em;
-    color: black;
+    input {
+        width: 150px;
+    }
 `

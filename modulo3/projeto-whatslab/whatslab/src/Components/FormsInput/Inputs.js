@@ -1,14 +1,18 @@
 import React, {useState} from "react"
 import './InputStyle.js'
-import {Forms, Nome, InputNome, InputMensagem, Mensagem, Enviar, Botao} from './InputStyle.js'
+import {Forms} from './InputStyle.js'
 
-function Inputs(props){
+function Inputs(){
 
 
     // Lógica da aplicação
     
      const [InputName, setInputName] = useState('')
      const [InputMessage, setInputMessage] = useState('')
+    //  const [Dados, setDados] = [{
+    //     nome: InputName,
+    //     mensagem: InputMessage
+    //  }] = useState()
 
 
 
@@ -22,21 +26,25 @@ function Inputs(props){
         setInputMessage(e.target.value)
     }
 
+    const Enviar = 
+
     return(
         <Forms>
-            <label>Remetente:</label>
+            <label></label>
             <input 
                 placeholder="Seu Nome"
                 value={InputName}
                 onChange={handleInputName}
             />
 
-            <label>Mensagem:</label>
+            <label></label>
             <input 
                 placeholder="Mensagem"
                 value={InputMessage}
                 onChange={handleInputMessage}
             />
+
+            <button ><img className="icone_enviar"src="https://img.icons8.com/ios/500/sent.png"/></button>
         </Forms>
     )
 }
