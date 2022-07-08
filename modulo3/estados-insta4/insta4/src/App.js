@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components'
 import Post from './components/Post/Post';
 
@@ -7,10 +7,25 @@ const MainContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
+
+  input{
+    width: 200px;
+    height: 20px;
+    margin: 10px 10px;
+
+  }
+
 `
+
+
 function App() {
 
- const Postagens = [
+ // estados <=
+ 
+ const [inputNome, setInputNome] = useState('')
+ const [inputFotoPerfil, setFotoPerfil] = useState('')
+ const [inputFotoPost, setFotoPost] = useState('')
+ const [Posts, setPosts] = useState([
     {
       nomeUsuario: 'Paulinha',
       fotoUsuario: 'https://picsum.photos/50/50',
@@ -30,10 +45,43 @@ function App() {
     }
 
  ]
+ )
 
  
+ 
+ // eventos <=
+ 
+ const handleInputNome = (e) =>{
+  setInputNome(e.target.value)
+ }
+
+ const handleInputFotoPerfil = (e) =>{
+  setFotoPerfil(e.target.value)
+ }
+
+ const handleInputFotoPost = (e) =>{
+  setFotoPost(e.target.value)
+ }
+
+ 
+// renderizando <=
+
+  const PostagensUsuarios = (e) =>{
+
+    e.preventDefault();
+    const novoPost = 
+    {
+      nomeUsuario: inputNome, 
+      fotoUsuario: inputFotoPerfil,
+      fotoPost: inputFotoPost
+    }
+
     
-  const PostUsuarios = Postagens.map((item, index) =>{
+    const novasPostagens = [...Posts, novoPost]
+    setPosts(novasPostagens)
+  }
+
+  const PostUsuarios = Posts.map((item, index) =>{
     return (
       <Post key={index}
         nomeUsuario={item.nomeUsuario}
@@ -43,12 +91,43 @@ function App() {
       
     )
   })
+  
+  
+  
 
   return(
     <MainContainer>
+
+    <form>
+        
+        <label>Nome:</label>
+        <input 
+          placeholder='Seu Nome'
+          value={inputNome}
+          onChange={handleInputNome}
+        />
+        
+        <label>Foto Perfil:</label>
+        <input 
+          placeholder='Insira o link da imagem'
+          value={inputFotoPerfil}
+          onChange={handleInputFotoPerfil}
+        />
+  
+        <label>Foto do Post:</label>
+        <input 
+          placeholder='Insira um link'
+          value={inputFotoPost}
+          onChange={handleInputFotoPost}
+        />
+      
+        <button onClick={PostagensUsuarios}>Postar</button>
+      
+      </form>
       
       {PostUsuarios}
-        
+      
+      
     </MainContainer>
 )
 
