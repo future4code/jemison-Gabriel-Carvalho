@@ -4,10 +4,10 @@ export const Forms = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 45%;
-    height: 150px;
+    width: 44%;
+    height: 100px;
     position: absolute;
-    bottom: 0px;
+    bottom: 20px;
     
     input{
         width: 200px;
