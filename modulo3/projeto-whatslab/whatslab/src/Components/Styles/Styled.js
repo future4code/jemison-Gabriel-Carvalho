@@ -2,14 +2,15 @@ import styled from "styled-components"
 
 export const Body = styled.div `
     width: 100%;
-    background-color: orange;
+    height: 48vw;
+    background-color: lightcoral;
 `
 
 export const Principal = styled.div `
     margin: 0 auto;
     width: 70%;
-    height: 48vw;
-    background-color: white;
+    height: 20vw;
+    
 `
 
 export const Header = styled.div `

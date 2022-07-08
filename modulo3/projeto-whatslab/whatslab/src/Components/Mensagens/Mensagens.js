@@ -2,9 +2,10 @@ import styled from "styled-components";
 
 export const Tela = styled.div `
     display: flex;
-    width: 100%;
-    height: 400px;
-    background-color: lightgreen;
+    width: 60%;
+    height: 530px;
+    background-color: lightblue;
     align-items: flex-end;
     margin: 0 auto;
+    border-radius: 20px;
 ` 

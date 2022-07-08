@@ -19,10 +19,12 @@ function App() {
         <Sessao>
 
           <Tela>
-            <p>ALOU</p>
+            
+            <Inputs />
+         
           </Tela>
 
-          <Inputs />
+          
 
 
 

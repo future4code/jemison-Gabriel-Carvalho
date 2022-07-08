@@ -9,11 +9,14 @@ function Inputs(){
     
      const [InputName, setInputName] = useState('')
      const [InputMessage, setInputMessage] = useState('')
-    //  const [Dados, setDados] = [{
-    //     nome: InputName,
-    //     mensagem: InputMessage
-    //  }] = useState()
+     const [Dados, setDados] = [{
+        nome: InputName,
+        mensagem: InputMessage
+     }] = useState()
 
+    const Enviar = () =>{
+        
+    }
 
 
     // Funções de eventos
@@ -26,7 +29,7 @@ function Inputs(){
         setInputMessage(e.target.value)
     }
 
-    const Enviar = 
+    
 
     return(
         <Forms>
