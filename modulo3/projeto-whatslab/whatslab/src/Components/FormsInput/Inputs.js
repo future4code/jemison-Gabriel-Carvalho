@@ -26,8 +26,8 @@ function Chat(){
     const renderizar = Dados.map((item, key) => {
         return (
             <Texto key={key}>
-                <p>{item.nome}</p>
-                <p>{item.mensagem}</p>
+                {item.nome}
+                {item.mensagem}
             </Texto>
         )
     })
