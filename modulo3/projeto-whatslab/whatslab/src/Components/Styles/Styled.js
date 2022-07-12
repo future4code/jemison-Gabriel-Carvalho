@@ -6,13 +6,6 @@ export const Body = styled.div `
     background-color: lightcoral;
 `
 
-export const Principal = styled.div `
-    margin: 0 auto;
-    width: 70%;
-    height: 20vw;
-    
-`
-
 export const Header = styled.div `
     display: flex;
     width: 100%;
@@ -32,11 +25,7 @@ export const Titulo = styled.h1 `
 `
 
 export const Sessao = styled.div `
-    display: flex;
     width: 100%;
-    height: 100px;
+    height: auto;
 
-    input {
-        width: 150px;
-    }
 `

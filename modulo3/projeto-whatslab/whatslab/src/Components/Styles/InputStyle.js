@@ -4,10 +4,8 @@ export const Forms = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44%;
+    width: 100%;
     height: 100px;
-    position: absolute;
-    bottom: 20px;
     
     input{
         width: 200px;
@@ -31,7 +29,7 @@ export const Forms = styled.div `
 
     button{
         border: none;
-        background-color: lightblue;
+        
     }
 `
 
