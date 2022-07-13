@@ -1,13 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 import { Principal, Titulo, Form } from "./DadosGeraisStyle";
-// import SeFormou from '../DadosComplementares/SeFormou/SeFormou'
-import NaoFormou from "../DadosComplementares/NaoFormou/NaoFormou";
 
 
 function DadosGerais (){
     
-    
-    
+    // lógica
+
+    const [valores, setValores] = useState();  
+
     return(
         
         <Principal>
@@ -44,18 +44,24 @@ function DadosGerais (){
 
                 <div>
                     <p>Qual o seu grau de escolaridade?</p>
-                    <select name="opcoes" value={''}>
+                    <select name="opcoes" value={valores} onChange={mudar => setValores(mudar.target.value)} >
                         <option value={0}>Ensino Médio Incompleto</option>
                         <option value={1}>Ensino Médio Completo</option>
                         <option value={2}>Ensino Superior Incompleto</option>
                         <option value={3}>Ensino Superior Completo</option>
                     </select>
                 </div>
+                
+                <div className="botao1">
+                        <button >Enviar</button>
+                </div>  
+                
+
+            
 
                 
             </Form>
-            <NaoFormou/>
-
+           
             
 
         </Principal>

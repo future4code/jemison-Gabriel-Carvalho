@@ -66,4 +66,30 @@ export const Form = styled.form `
         }
     }
 
+    .botao1 {
+        display: block;
+        margin: 10px 85%;
+        
+        button{
+            width: 60px;
+            color: white;
+            background-color: black;
+            padding: 4px;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+    }
+
+    .botao2{
+        display: block;
+        margin: 10px 85%;
+
+        button{
+            background-color: lightcoral;
+            padding: 4px;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+    }
+
 `

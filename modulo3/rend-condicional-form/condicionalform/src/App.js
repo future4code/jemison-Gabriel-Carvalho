@@ -1,12 +1,12 @@
-import React from 'react';
-import DadosGerais from './components/DadosGerais/DadosGerais';
+import React from "react";
+import DadosGerais from "./components/DadosGerais/DadosGerais";
 
 function App() {
-  return (
-    <div className="App">
-      <DadosGerais />
-    </div>
-  );
+  return(
+  <div>
+    <DadosGerais/>
+  </div>
+  )
 }
 
 export default App;

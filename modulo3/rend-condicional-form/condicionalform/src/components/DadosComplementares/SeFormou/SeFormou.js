@@ -1,7 +1,10 @@
 import React from 'react';
 import {Formado} from '../SeFormou/SeFormouStyle';
 
-function SeFormou (){
+
+function SeFormou (props){
+    const {handleFormou} = props;
+    
     return(
         <Formado>
             

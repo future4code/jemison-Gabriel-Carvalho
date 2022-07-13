@@ -1,13 +1,16 @@
 import React from "react";
 import {NaoFormado} from '../NaoFormou/NaoFormouStyle'
 
-function NaoFormou (){
+function NaoFormou (props){
+
+    const {handleNaoFormado} = props;
+
     return(
-        <NaoFormado>
+        <NaoFormado onClick={handleNaoFormado}>
             <div>
                 
                 <label>Por que você não terminou um curso de graduação?</label>
-                <input />
+                <input type="text"/>
 
             </div>
 
