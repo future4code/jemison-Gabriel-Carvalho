@@ -1,67 +1,56 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
-import { Botao, Card, Descricao, Imagem, Icone } from "./TelaStyled";
+import { Botao, Card, Descricao, Imagem, IconeX, IconeCoracao, ImagemCard } from "./TelaStyled";
 import x_Icon from '../../icon/x_icon.png'
 import heart_Icon from '../../icon/heart_icon.png'
 
-function TelaInicial() {
+function TelaInicial(props) {
 
     const [perfil, setPerfil] = useState({})
-    const [proximoPerfil, setProximoPerfil] = useState(false)
-
+    
+    const pegarPerfil = () => {
+        axios.get('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/person')
+        .then((response) => setPerfil(response.data))
+        .catch((error) => console.log(error.response))
+    }
 
 
     useEffect(() => {
-        axios.get('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/person')
-            .then((response) => setPerfil(response.data))
+        pegarPerfil()
     }, [])
 
-
-
-
-
-    function Escolhido() {
-        setProximoPerfil(!false)
-        axios.get('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/person')
-        .then((response) => setPerfil(response.data))
-
-        const escolha = true
-
+    
+    function escolha(escolha) {
+        
         const body = {
             id: perfil.profile.id,
             choice: escolha
         }
 
-        axios.post('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/person', body).then((response) => console.log(response.data))
+        axios.post('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/choose-person', body)
+        .then((response) => pegarPerfil())
+        .catch((error) => console.log(error))
+        
+    } 
+
+    const match = () => {
+        escolha(true)
+        
     }
 
-   
-
-    function Rejeitado () {
-        setProximoPerfil(!false)
-        axios.get('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/person')
-        .then((response) => setPerfil(response.data))
-
-        const escolha = false
-
-        const body = {
-            id: perfil.profile.id,
-            choice: escolha
-        }
-
-        axios.post('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:aluno/person', body).then((response) => false)
-
-        console.log(perfil.profile)
+    const dismatch = () => {
+        escolha(false)
     }
+
 
 
     return (
         <div>
+            <Card key={perfil.profile?.id}>
 
-            <Card>
-                <div>
-                    <Imagem src={perfil.profile?.photo} alt={perfil.profile?.photo_alt}/>
-                </div>
+                <ImagemCard>
+                    <Imagem src={perfil.profile?.photo} alt={perfil.profile?.photo_alt} />
+                </ImagemCard>
 
                 <Descricao>
                     <p>{perfil.profile?.name}, {perfil.profile?.age} anos</p>
@@ -70,12 +59,12 @@ function TelaInicial() {
                 </Descricao>
 
                 <Botao>
-                    <button onClick={Rejeitado}>
-                        <Icone src={x_Icon} alt='icone de x' />
+                    <button onClick={dismatch}>
+                        <IconeX src={x_Icon} alt='icone de x' />
                     </button>
 
-                    <button onClick={Escolhido}>
-                        <Icone src={heart_Icon} alt='coração simbolizado um match' />
+                    <button onClick={match}>
+                        <IconeCoracao className="heart" src={heart_Icon} alt='coração simbolizado um match' />
                     </button>
                 </Botao>
             </Card>
