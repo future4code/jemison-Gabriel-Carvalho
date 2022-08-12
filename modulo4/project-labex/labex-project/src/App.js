@@ -1,12 +1,11 @@
-import './App.css';
-// import Router from './Pages/Router'
+import Router from './components/Router'
+import {GlobalStyle} from './GlobalStyle'
 
 function App() {
   return (
     <div className="App">
-      
-      {/* <Router /> */}
-      <h1>Teste</h1>
+      <GlobalStyle/>
+      <Router />
     </div>
   );
 }
