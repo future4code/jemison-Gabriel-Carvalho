@@ -17,7 +17,7 @@ function ListTripsPage () {
 
     return(
         <div>
-            <Titulo>Viagens </Titulo>            
+            <Titulo>Viagens </Titulo>       
             <Botoes>
                 <button onClick={seInscrever}>Inscrever-se</button>
                 <button onClick={voltar}>voltar</button>
