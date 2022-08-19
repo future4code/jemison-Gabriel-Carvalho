@@ -1,10 +1,11 @@
 import React from 'react';
+import { Titulo } from '../HomePage/HomePageStyled';
 
 
 function CreateTripPage () {
     return(
         <div>
-            <h1> Formulário para o administrador criar uma nova viagem</h1>
+            <Titulo> Criar viagem</Titulo>
             <button>criar</button>
 
         </div>
