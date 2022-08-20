@@ -31,6 +31,7 @@ function ApplicationFormPage () {
     }
 
     const [body, onChange] = useForm({name: "", age: "", applicationText: "", profession: "", country: ""})
+    const [select, Change] = useForm({item: ""})
 
     return (
 
@@ -98,7 +99,7 @@ function ApplicationFormPage () {
 
 
                 <SelectStyled> 
-                    <select>
+                    <select value={select.item} onChange={Change}>
                         <option selected>Escolha um país</option>
                         <option>1</option>
                         <option>2</option>
