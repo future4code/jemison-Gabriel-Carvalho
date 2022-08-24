@@ -2,13 +2,15 @@ import { useState } from "react";
 
 export default function useForm(initialState) {
 
-    const [formulario, setFormulario] = useState(initialState)
+    const [form, setForm] = useState(initialState)
 
     const onChange = (event) => {
-        const {name, value} = event.target;
-        setFormulario({...formulario, [name]: value})
+        const newValue = event.target.value;
+        const Name = event.target.name
+        
+        setForm({...form, [Name] : newValue})
     }
 
-    return [formulario, onChange]
+    return [form, onChange]
 
 }

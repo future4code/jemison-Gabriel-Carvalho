@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Principal = styled.div `
+export const Main = styled.div `
     width: 100%;
     height: 100vh;
     display: flex;
@@ -40,3 +40,15 @@ export const Titulo = styled.h1`
     align-items: center;
     justify-content: center;
 `
+
+export const TituloSelect = styled.h4 `
+    width: 100%;
+    height: auto;
+    margin: 20px;
+    align-items: center;
+    font-size: 15px;
+    font-family: 'Arial', Times, serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+` 

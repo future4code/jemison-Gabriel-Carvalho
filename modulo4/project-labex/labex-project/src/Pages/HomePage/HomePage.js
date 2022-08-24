@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import React from 'react';
-import {Botoes, Principal, Titulo} from './HomePageStyled'
+import {Botoes, Main,Titulo} from './HomePageStyled'
 
 function HomePage () {
     const navigate = useNavigate();
@@ -14,13 +14,13 @@ function HomePage () {
 
 
     return(
-        <Principal>
+        <Main>
             <Titulo>LabeX</Titulo>
             <Botoes>
                 <button onClick={login}>Área Administrativa</button>
                 <button onClick={lista}>Lista de viagens</button>
             </Botoes>
-        </Principal>
+        </Main>
     )
 }
 

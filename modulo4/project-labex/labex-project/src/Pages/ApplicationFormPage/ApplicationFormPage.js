@@ -1,11 +1,10 @@
 import axios from "axios";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { URL } from "../../constants/Url";
 import useForm from "../../hooks/useForm";
-import { Botoes, Principal, Titulo } from "../HomePage/HomePageStyled";
-import { Formulario, InputContainer, InputStyled, SelectStyled } from "./ApplicationFormPageStyled";
-// import { URL } from "../../constants/Url";
+import { Botoes, Main,Titulo } from "../HomePage/HomePageStyled";
+import { Formulario, InputContainer, InputStyled, SelectStyled } from "./ApplicationFormPageStyled"
 
 function ApplicationFormPage () {
     const navigate = useNavigate();
@@ -16,40 +15,39 @@ function ApplicationFormPage () {
         navigate(-1)
     }
     
-    const register = (e) => {
-        e.preventDefault();
-        const token = localStorage.getItem("token")
+    const[trip, setTrip] = useState([]);
 
-        const headers = {
-            auth: token
-        }
+    useEffect(() => {
+        axios.get(`${URL}gabriel/trips`).then((response) =>{ setTrip(response.data.trips)}) 
+    })
 
-        axios.post(`${URL}:darvas/trips`, body, headers)
-        .then((response) => localStorage.setItem("token", response.data.token))
-        .catch((error) => error)
+    const [form, onChange] = useForm({
+        name: "",
+        age: 0,
+        applicationText: "",
+        profession: "",
+        country: "",
+        trip: null
+    })
+
     
-    }
-
-    const [body, onChange] = useForm({name: "", age: "", applicationText: "", profession: "", country: ""})
-    const [select, Change] = useForm({item: ""})
-
     return (
 
-        <Principal>
+        <Main>
             <Titulo>Se candidate para uma viagem</Titulo>
-            <Formulario onSubmit={register}>
+            <Formulario>
 
                
                <InputContainer>
                     <label htmlFor="name">
-                        Nome:
                         <InputStyled
                             id="name"
+                            placeholder="Nome completo"
                             name="name"
                             type="text" 
-                            value={body.name}
+                            value={form['name']}
                             onChange={onChange}
-                            pattern="(?=^.{5,60}$)^[A-Z][a-z]+(?:[ ][A-Z][a-z]+)*$" title="digite um nome válido"
+                            pattern="(?=^.{3,60}$)^[A-Z][a-z]+(?:[ ][A-Z][a-z]+)*$" title="Please insert a valid name"
                             required
                         />
                     </label>
@@ -57,11 +55,12 @@ function ApplicationFormPage () {
 
                 <InputContainer>
                     <label htmlFor="age">
-                        Idade:
                         <InputStyled
                             id="age"
+                            placeholder="Idade"
                             name="age"
-                            value={body.age}
+                            type="text"
+                            value={form['age']}
                             onChange={onChange}
                             required
                         />
@@ -70,28 +69,32 @@ function ApplicationFormPage () {
 
                 <InputContainer>
                     <label htmlFor="applicationText">
-                        Escreva o que te motiva:
                         <InputStyled
                             id="applicationText"
+                            placeholder="Texto do candidato"
                             name="applicationText"
                             type="text"
-                            pattern="^.{3,}"
-                            value={body.applicationText}
+                            pattern="^.{30,}"
+                            title="minimum of 30 characters"
+                            value={form['applicationText']}
                             onChange={onChange}
+                            required
                         />
                     </label>
                 </InputContainer>
                 
                 <InputContainer>
                     <label htmlFor="profession">
-                        Profissão:
                         <InputStyled
                             id="profession"
+                            placeholder="Profissão"
                             name="profession"
                             type="text"
-                            value={body.profession}
+                            value={form['profession']}
                             onChange={onChange}
-
+                            pattern="^.{10,}"
+                            title="minimum of 10 characters"
+                            required
                         />
                     
                     </label>
@@ -99,21 +102,24 @@ function ApplicationFormPage () {
 
 
                 <SelectStyled> 
-                    <select value={select.item} onChange={Change}>
-                        <option selected>Escolha um país</option>
-                        <option>1</option>
-                        <option>2</option>
+                    <select>
+                        {trip.map((trips) => {
+                            return(
+                                <>
+                                
+                                    <label value={trips}>{trips.name}</label>
+                               
+                                </>
+                                )})}
                     </select>
-
                 </SelectStyled>
-
 
             <Botoes>
                 <button onClick={voltar}>voltar</button>
                 <button type="submit">enviar</button>
             </Botoes>
             </Formulario>
-        </Principal>  
+        </Main>  
     )
 }
 

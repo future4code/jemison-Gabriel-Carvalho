@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useProtectedPage } from '../../hooks/useProtectedPage';
-import {Botoes, Principal, Titulo} from '../HomePage/HomePageStyled'
+import {Botoes, Main, Titulo} from '../HomePage/HomePageStyled'
 
 function AdminHomePage () {
     useProtectedPage();
@@ -21,7 +21,7 @@ function AdminHomePage () {
     }
 
     return(
-        <Principal>
+        <Main>
             <Titulo> Painel de Viagens</Titulo>
             <Botoes>
                 <button onClick={voltar}>Voltar</button>
@@ -29,7 +29,7 @@ function AdminHomePage () {
                 <button onClick={inicio}>Logout</button>
             </Botoes>
 
-        </Principal>
+        </Main>
     )
 }
 

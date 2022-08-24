@@ -4,7 +4,6 @@ export const Formulario = styled.form`
     display: flex;
     width: 50%;
     height: 60%;
-    background-color: #FFEBCD;
     align-items: center;
     justify-content: center;
     flex-direction: column;

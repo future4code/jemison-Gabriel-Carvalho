@@ -37,7 +37,7 @@ function ListTripsPage () {
     return(
         <div>
             <Titulo>Lista de Viagens </Titulo>
-            {isLoading && <Titulo>Carregando Viagens...</Titulo>}
+            {isLoading && <h3>Carregando Viagens...</h3>}
             {!isLoading && error && <p>Ocorreu um erro ao carregar viagens</p>}
             {!isLoading && tripsList && tripsList.trips && tripsList.trips.length > 0 && listTrip}
             {!isLoading && tripsList && tripsList.trips && tripsList.trips.length === 0 && <p>Não há viagens</p>}       
