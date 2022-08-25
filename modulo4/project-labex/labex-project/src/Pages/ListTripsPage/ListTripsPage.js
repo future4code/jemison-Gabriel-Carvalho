@@ -24,8 +24,8 @@ function ListTripsPage () {
         return(
             <ListContainer key={usuario.id}>
                 <p>{usuario.name}</p>
-                <li>{usuario.planet}</li>
-                <li>{usuario.description}</li>
+                <p>{usuario.planet}</p>
+                <p>{usuario.description}</p>
             </ListContainer>
             
         )   

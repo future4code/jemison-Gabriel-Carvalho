@@ -1,10 +1,14 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react"
+import Select from 'react-select'
 import { useNavigate } from "react-router-dom";
 import { URL } from "../../constants/Url";
 import useForm from "../../hooks/useForm";
 import { Botoes, Main,Titulo } from "../HomePage/HomePageStyled";
-import { Formulario, InputContainer, InputStyled, SelectStyled } from "./ApplicationFormPageStyled"
+import { Formulario, InputContainer, InputStyled, SelectContainer, SelectedContainer } from "./ApplicationFormPageStyled"
+import { useRequestData } from "../../hooks/useRequestData";
+import { ListContainer } from "../ListTripsPage/ListTripsPageStyled";
+import {ListCountries} from '../../constants/Countries'
 
 function ApplicationFormPage () {
     const navigate = useNavigate();
@@ -15,22 +19,41 @@ function ApplicationFormPage () {
         navigate(-1)
     }
     
-    const[trip, setTrip] = useState([]);
 
-    useEffect(() => {
-        axios.get(`${URL}gabriel/trips`).then((response) =>{ setTrip(response.data.trips)}) 
-    })
+    const [tripsS] = useRequestData(`${URL}/trips`)
+    
 
     const [form, onChange] = useForm({
         name: "",
-        age: 0,
+        age: Number(null),
         applicationText: "",
         profession: "",
         country: "",
-        trip: null
     })
 
+    const registerTrip = (e) =>{
+        e.preventDefault();
+        const body = {
+            name: form.name,
+            age: form.age,
+            applicationText: form.applicationText,
+            profession: form.profession,
+            country: form.country
+        }
+
+        const headers = {
+            "content-type": "application/json"
+        }
+
+        axios.post(`${URL}/trips/
+        NoIFVcOiSgTKTIPVZwXS/apply`, body, headers)
+        .then((response) => { alert("Viagem cadastrada!")})
+        .catch((error) => {console.log(error)})
+    }
+
     
+
+    console.log()
     return (
 
         <Main>
@@ -45,7 +68,7 @@ function ApplicationFormPage () {
                             placeholder="Nome completo"
                             name="name"
                             type="text" 
-                            value={form['name']}
+                            value={form.name}
                             onChange={onChange}
                             pattern="(?=^.{3,60}$)^[A-Z][a-z]+(?:[ ][A-Z][a-z]+)*$" title="Please insert a valid name"
                             required
@@ -59,8 +82,8 @@ function ApplicationFormPage () {
                             id="age"
                             placeholder="Idade"
                             name="age"
-                            type="text"
-                            value={form['age']}
+                            type="number"
+                            value={form.age}
                             onChange={onChange}
                             required
                         />
@@ -76,7 +99,7 @@ function ApplicationFormPage () {
                             type="text"
                             pattern="^.{30,}"
                             title="minimum of 30 characters"
-                            value={form['applicationText']}
+                            value={form.applicationText}
                             onChange={onChange}
                             required
                         />
@@ -90,7 +113,7 @@ function ApplicationFormPage () {
                             placeholder="Profissão"
                             name="profession"
                             type="text"
-                            value={form['profession']}
+                            value={form.profession}
                             onChange={onChange}
                             pattern="^.{10,}"
                             title="minimum of 10 characters"
@@ -101,22 +124,19 @@ function ApplicationFormPage () {
                 </InputContainer>
 
 
-                <SelectStyled> 
-                    <select>
-                        {trip.map((trips) => {
-                            return(
-                                <>
-                                
-                                    <label value={trips}>{trips.name}</label>
-                               
-                                </>
-                                )})}
+                <SelectedContainer> 
+                    {/* <select name="country" onChange={onChange}> 
+                        {tripsS && tripsS && tripsS.trips && tripsS.trips.map((el) => (
+                            <option value={el.name} key={el.id}>{el.name}</option>))}
+                    </select> */}
+                    <select name="country" onChange={onChange}>
+                        {ListCountries}
                     </select>
-                </SelectStyled>
+                </SelectedContainer>
 
             <Botoes>
                 <button onClick={voltar}>voltar</button>
-                <button type="submit">enviar</button>
+                <button type="submit" onClick={registerTrip}>enviar</button>
             </Botoes>
             </Formulario>
         </Main>  

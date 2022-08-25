@@ -21,3 +21,9 @@ export const Countries = [
     "Turks &amp; Caicos", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "Uruguay", "Uzbekistan", "Venezuela", "Vietnam", 
     "Virgin Islands (US)", "Yemen", "Zambia", "Zimbabwe"
 ];
+
+
+export const ListCountries = Countries.map((country, index) => {
+    return <option key={index}>{country}</option>
+})
+

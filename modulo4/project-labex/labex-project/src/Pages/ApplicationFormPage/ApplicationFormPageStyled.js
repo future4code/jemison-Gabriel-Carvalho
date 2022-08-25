@@ -17,23 +17,24 @@ export const InputStyled = styled.input`
     border-radius: 5px;
     padding: 5px;
     margin: 8px;
+
 `
 
-export const SelectStyled = styled.div`
-    width: 100%;
-    height: 200px;
+export const SelectedContainer = styled.div`
+    width: 500px;
+    height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
     select{
-        width: 200px;
+        width: 100%;
         height: 30px;
-        border-radius: 10px;
+        border-radius: 5px;
     }
 
     select:hover{
         cursor: pointer;
-        background-color: darkgray;
+        border: 1px solid red;
     }
 `
 
