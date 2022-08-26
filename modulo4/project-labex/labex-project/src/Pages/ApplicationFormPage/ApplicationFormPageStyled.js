@@ -8,6 +8,7 @@ export const Formulario = styled.form`
     justify-content: center;
     flex-direction: column;
     border-radius: 10px;
+    margin: 10px 0;
 `
 
 export const InputStyled = styled.input`
@@ -22,7 +23,7 @@ export const InputStyled = styled.input`
 
 export const SelectedContainer = styled.div`
     width: 500px;
-    height: 300px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;

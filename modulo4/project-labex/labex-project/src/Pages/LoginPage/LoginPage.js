@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import {Titulo, Botoes, Main} from '../HomePage/HomePageStyled'
-import {Formulario} from '../ApplicationFormPage/ApplicationFormPageStyled'
+import {Formulario, InputStyled} from '../ApplicationFormPage/ApplicationFormPageStyled'
 import axios from 'axios';
 import useForm from '../../hooks/useForm';
 import { useProtectedPage } from '../../hooks/useProtectedPage';
@@ -21,12 +21,20 @@ function LoginPage () {
         
     const Logar = (e) => {
         e.preventDefault();
-        axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labeX/darvas/login",loginUser)
-        .then(response => {
+
+        const options = {
+            method: 'POST',
+            url: 'https://us-central1-labenu-apis.cloudfunctions.net/labeX/gabriel-carvalho/login',
+            headers: {'Content-Type': 'application/json'},
+            data: loginUser
+          };
+          
+          axios.request(options).then(function (response) {
             localStorage.setItem("token", response.data.token)
             navigate("/adm")
-        })
-        .catch((error) => console.log(error.message))
+          }).catch(function (error) {
+            console.error(error);
+          });
 
     }
      
@@ -35,23 +43,21 @@ function LoginPage () {
             <Titulo>Administrador</Titulo>
             <Formulario onSubmit={Logar}>
                 <label htmlFor='email'>
-                    Email:
-                    <input
+                    <InputStyled
                         id="email"
                         name="email"
                         type="email"
                         value={loginUser.email}
                         onChange={onChange}
-                        placeholder="meuemail@exemplo.com"
-                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+                        placeholder="Meuemail@exemplo.com"
+                        
                         title="Please insert a valid email"
                         
                     />
                 </label>
 
-                <label>
-                    Senha:
-                    <input 
+                <label htmlFor="password">
+                    <InputStyled
                         id="password"
                         name="password"
                         type="password"
@@ -65,7 +71,7 @@ function LoginPage () {
                 </label>
                 <Botoes>
                     <button onClick={voltar}>voltar</button>
-                    <button type="submit">entrar</button>
+                    <button onClick={Logar}>entrar</button>
                 </Botoes>
             </Formulario>
     </Main>  

@@ -40,8 +40,9 @@ function ApplicationFormPage () {
             profession: form.profession,
             country: form.country
         }
-
+        
         const headers = {
+        
             "content-type": "application/json"
         }
 
@@ -51,9 +52,6 @@ function ApplicationFormPage () {
         .catch((error) => {console.log(error)})
     }
 
-    
-
-    console.log()
     return (
 
         <Main>
@@ -124,20 +122,16 @@ function ApplicationFormPage () {
                 </InputContainer>
 
 
-                <SelectedContainer> 
-                    {/* <select name="country" onChange={onChange}> 
-                        {tripsS && tripsS && tripsS.trips && tripsS.trips.map((el) => (
-                            <option value={el.name} key={el.id}>{el.name}</option>))}
-                    </select> */}
+                <SelectedContainer>
                     <select name="country" onChange={onChange}>
                         {ListCountries}
                     </select>
                 </SelectedContainer>
 
-            <Botoes>
-                <button onClick={voltar}>voltar</button>
-                <button type="submit" onClick={registerTrip}>enviar</button>
-            </Botoes>
+                <Botoes>
+                    <button onClick={voltar}>voltar</button>
+                    <button type="submit" onClick={registerTrip}>enviar</button>
+                </Botoes>
             </Formulario>
         </Main>  
     )

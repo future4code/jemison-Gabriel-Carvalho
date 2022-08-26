@@ -23,9 +23,9 @@ function ListTripsPage () {
     const listTrip = tripsList && tripsList.trips && tripsList.trips.map((usuario) => {
         return(
             <ListContainer key={usuario.id}>
-                <p>{usuario.name}</p>
-                <p>{usuario.planet}</p>
-                <p>{usuario.description}</p>
+                <li>{usuario.name}</li>
+                <li>{usuario.planet}</li>
+                <li>{usuario.description}</li>
             </ListContainer>
             
         )   

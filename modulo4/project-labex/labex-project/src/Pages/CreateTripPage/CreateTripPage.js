@@ -1,44 +1,88 @@
 import React from 'react';
-import { Formulario, InputContainer, InputStyled } from '../ApplicationFormPage/ApplicationFormPageStyled';
+import { Formulario, InputContainer, InputStyled, SelectedContainer } from '../ApplicationFormPage/ApplicationFormPageStyled';
 import { Botoes, Main, Titulo } from '../HomePage/HomePageStyled';
 import {useProtectedPage} from '../../hooks/useProtectedPage'
 import useForm from '../../hooks/useForm';
+import axios from 'axios';
+import { URL } from '../../constants/Url';
+import { ListPlanets } from '../../constants/Planets';
+import { useNavigate } from 'react-router-dom';
 
 
 function CreateTripPage () {
     useProtectedPage();
 
-    const [body, onChange] = useForm({name: "", date: "", description: "", durationInDays: ""})
+    const navigate = useNavigate();
 
+    const [form, onChange] = useForm(
+        {
+        name: "",
+        date: "",
+        description: "",
+        durationInDays: '',
+        planet: ""
+    })
+
+    const createTrip = (e) => {
+        e.preventDefault();
+
+        const body = {
+            name: form.name,
+            planet: form.planet,
+            date: form.date,
+            description: form.description,
+            durationInDays: Number(form.durationInDays)
+        }
+
+
+        const options = {
+            method: 'POST',
+            url: 'https://us-central1-labenu-apis.cloudfunctions.net/labeX/gabriel-carvalho/trips',
+            headers: {
+              'Content-Type': 'application/json',
+              Auth: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ikk0TDEzMDhwRFdRVFRrRTBON3hnIiwiZW1haWwiOiJnYWJyaWVsMTIzQGVtYWlsLmNvbSIsImlhdCI6MTY2MTQ3NDY3MH0.inKxAQWpYCi71UCTUgoNgR3fwaUVghEjugEpOdVMt6E'
+            },
+            data: body
+          };
+          
+          axios.request(options).then(function (response) {
+            console.log(response.data);
+          }).catch(function (error) {
+            console.error(error);
+          });
+        
+        
+    }
+
+    const voltar = () =>{
+        navigate(-1)
+    }
+
+    console.log(form)
     return(
         <Main>
             <Titulo> Criar viagem</Titulo>
-            <Formulario onSubmit="">
+            <Formulario onSubmit={createTrip}>
                 <InputContainer >
                     <label htmlFor="name">
-                        Nome:
                         <InputStyled 
-                            id="name"
+                            placeholder='Nome'
                             name="name"
                             type="text" 
-                            value={body.name}
+                            value={form.name}
                             onChange={onChange}
+                            pattern={"^.{10,}"}
                             required
                         />
                     </label>
                 </InputContainer>
 
-                {/*select com planetas*/}
-
                 <InputContainer >
-                    <label htmlFor="date">
-                        Data
+                    <label  name="date" htmlFor="date">
                         <InputStyled 
-                            id="date"
                             name="date"
                             type="date" 
-                            value={''}
-                            onChange={''}
+                            onChange={onChange}
                             required
                         />
                     </label>
@@ -46,13 +90,12 @@ function CreateTripPage () {
 
                 <InputContainer >
                     <label htmlFor="description">
-                        Descrição:
                         <InputStyled 
-                            id="name"
-                            name="name"
+                            placeholder='Descrição da viagem'
+                            name="description"
                             type="text" 
-                            value={''}
-                            onChange={''}
+                            value={form.description}
+                            onChange={onChange}
                             required
                         />
                     </label>
@@ -60,22 +103,32 @@ function CreateTripPage () {
 
                 <InputContainer >
                     <label htmlFor="durationInDays">
-                        Duração em dias:
+                        
                         <InputStyled 
-                            id="durationInDays"
+                            placeholder='Duração em dias'
                             name="durationInDays"
-                            type="text" 
-                            value={''}
-                            onChange={''}
+                            type="number" 
+                            value={form.durationInDays}
+                            onChange={onChange}
                             required
                         />
                     </label>
                 </InputContainer>
 
-                <Botoes>
+                <SelectedContainer> 
+                    <select name="planet" onChange={onChange}>
+                        {ListPlanets}
+                    </select>
+                </SelectedContainer>
+                 
+                 <Botoes>
+                    <button onClick={voltar}>voltar</button>
                     <button>criar</button>
                 </Botoes>
+            
             </Formulario>
+
+
         </Main>
     )
 }

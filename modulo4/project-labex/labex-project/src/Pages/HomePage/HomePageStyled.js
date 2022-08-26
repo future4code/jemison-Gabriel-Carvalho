@@ -7,6 +7,7 @@ export const Main = styled.div `
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #708090;
 `
 
 export const Botoes = styled.div`
@@ -16,14 +17,17 @@ export const Botoes = styled.div`
     height: 60px;
     flex-direction: row;
     button{
-        padding: 6px;
-        border-radius: 10px;
-        margin: 15px 10px;
+        width: 150px;
+        height: 42px;
+        padding: 10px;
+        border-radius: 15px;
+        margin: 20px 10px;
+        background-color:#cd5c5c;
+        color: white;
     }
 
     button:hover{
         cursor: pointer;
-        background-color: darkgray;
     }
 
 `
