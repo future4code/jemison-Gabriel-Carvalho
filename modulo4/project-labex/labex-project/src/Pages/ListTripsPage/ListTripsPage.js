@@ -1,7 +1,7 @@
 import {useNavigate} from 'react-router-dom';
 import React from 'react';
-import { Botoes, Titulo } from '../HomePage/HomePageStyled';
-import { ListContainer } from './ListTripsPageStyled';
+import { Botoes, Main, Titulo } from '../HomePage/HomePageStyled';
+import { ListContainer, MainList, TripsElements } from './ListTripsPageStyled';
 import { useRequestData } from '../../hooks/useRequestData';
 import { URL } from '../../constants/Url';
 
@@ -23,9 +23,13 @@ function ListTripsPage () {
     const listTrip = tripsList && tripsList.trips && tripsList.trips.map((usuario) => {
         return(
             <ListContainer key={usuario.id}>
-                <li>{usuario.name}</li>
-                <li>{usuario.planet}</li>
-                <li>{usuario.description}</li>
+                <TripsElements>
+                    <p>Nome: {usuario.name}</p>
+                    <p>Planeta: {usuario.planet}</p>
+                    <p>Descrição: {usuario.description}</p>
+                    <p>Data: {usuario.date}</p>
+                    <p>Duração da Viagem: {usuario.durationInDays}</p>
+                </TripsElements>
             </ListContainer>
             
         )   
@@ -35,7 +39,7 @@ function ListTripsPage () {
     console.log(tripsList)
     
     return(
-        <div>
+        <MainList>
             <Titulo>Lista de Viagens </Titulo>
             {isLoading && <h3>Carregando Viagens...</h3>}
             {!isLoading && error && <p>Ocorreu um erro ao carregar viagens</p>}
@@ -43,10 +47,10 @@ function ListTripsPage () {
             {!isLoading && tripsList && tripsList.trips && tripsList.trips.length === 0 && <p>Não há viagens</p>}       
             <Botoes>
                 <button onClick={seInscrever}>Inscrever-se</button>
-                <button onClick={voltar}>voltar</button>
+                <button onClick={voltar}>Voltar</button>
             </Botoes>
 
-        </div>
+        </MainList>
     )
 }
 

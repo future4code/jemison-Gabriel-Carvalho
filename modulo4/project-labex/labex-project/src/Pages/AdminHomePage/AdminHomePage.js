@@ -1,8 +1,11 @@
+import axios from 'axios';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { URL } from '../../constants/Url';
 import { useProtectedPage } from '../../hooks/useProtectedPage';
 import {Botoes, Main, Titulo} from '../HomePage/HomePageStyled'
 import ListTripsPage from '../ListTripsPage/ListTripsPage';
+import TripDetailsPage from '../TripDetailsPage/TripDetailsPage';
 
 function AdminHomePage () {
     useProtectedPage();
@@ -25,13 +28,13 @@ function AdminHomePage () {
         <Main>
             <Titulo> Painel de Viagens</Titulo>
 
-            <ListTripsPage/>
             <Botoes>
                 <button onClick={voltar}>Voltar</button>
                 <button onClick={CriarViagem}>Criar Viagem</button>
                 <button onClick={inicio}>Logout</button>
             </Botoes>
 
+            <TripDetailsPage/>
         </Main>
     )
 }

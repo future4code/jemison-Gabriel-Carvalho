@@ -70,8 +70,8 @@ function LoginPage () {
                     />
                 </label>
                 <Botoes>
-                    <button onClick={voltar}>voltar</button>
-                    <button onClick={Logar}>entrar</button>
+                    <button onClick={voltar}>Voltar</button>
+                    <button onClick={Logar}>Entrar</button>
                 </Botoes>
             </Formulario>
     </Main>  

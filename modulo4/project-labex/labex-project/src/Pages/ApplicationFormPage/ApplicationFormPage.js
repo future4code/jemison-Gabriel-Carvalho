@@ -1,6 +1,4 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react"
-import Select from 'react-select'
 import { useNavigate } from "react-router-dom";
 import { URL } from "../../constants/Url";
 import useForm from "../../hooks/useForm";
@@ -20,22 +18,30 @@ function ApplicationFormPage () {
     }
     
 
-    const [tripsS] = useRequestData(`${URL}/trips`)
     
 
     const [form, onChange] = useForm({
+        id: "",
         name: "",
-        age: Number(null),
+        age: "",
         applicationText: "",
         profession: "",
         country: "",
     })
 
+    const [tripsList] = useRequestData(`${URL}/trips`)
+
+    const tripSelect = tripsList && tripsList.trips.map((viagem, index) => {
+        return <option value={viagem.id}>{viagem.name}</option>
+
+    })
+
     const registerTrip = (e) =>{
         e.preventDefault();
         const body = {
+            id: form.id,
             name: form.name,
-            age: form.age,
+            age: Number(form.age),
             applicationText: form.applicationText,
             profession: form.profession,
             country: form.country
@@ -43,23 +49,31 @@ function ApplicationFormPage () {
         
         const headers = {
         
-            "content-type": "application/json"
+            "Content-Type": "application/json"
         }
 
-        axios.post(`${URL}/trips/
-        NoIFVcOiSgTKTIPVZwXS/apply`, body, headers)
+        axios.post(`${URL}/trips/${form.id}/apply`, body)
         .then((response) => { alert("Viagem cadastrada!")})
         .catch((error) => {console.log(error)})
+        console.log(body)
+        console.log(form)
     }
+
+    
 
     return (
 
         <Main>
             <Titulo>Se candidate para uma viagem</Titulo>
-            <Formulario>
+            <Formulario onSubmit={registerTrip}>
 
-               
-               <InputContainer>
+                <SelectedContainer>
+                    <select name="id" onChange={onChange}>
+                        {tripSelect}
+                    </select>
+                </SelectedContainer>
+                
+                <InputContainer>
                     <label htmlFor="name">
                         <InputStyled
                             id="name"
@@ -68,7 +82,8 @@ function ApplicationFormPage () {
                             type="text" 
                             value={form.name}
                             onChange={onChange}
-                            pattern="(?=^.{3,60}$)^[A-Z][a-z]+(?:[ ][A-Z][a-z]+)*$" title="Please insert a valid name"
+                            pattern="(?=^.{3,60}$)^[A-Z][a-z]+(?:[ ][A-Z][a-z]+)*$" 
+                            title="Please insert a valid name"
                             required
                         />
                     </label>
@@ -129,8 +144,8 @@ function ApplicationFormPage () {
                 </SelectedContainer>
 
                 <Botoes>
-                    <button onClick={voltar}>voltar</button>
-                    <button type="submit" onClick={registerTrip}>enviar</button>
+                    <button onClick={voltar}>Voltar</button>
+                    <button>Enviar</button>
                 </Botoes>
             </Formulario>
         </Main>  

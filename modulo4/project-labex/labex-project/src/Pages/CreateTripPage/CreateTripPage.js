@@ -40,13 +40,14 @@ function CreateTripPage () {
             url: 'https://us-central1-labenu-apis.cloudfunctions.net/labeX/gabriel-carvalho/trips',
             headers: {
               'Content-Type': 'application/json',
-              Auth: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ikk0TDEzMDhwRFdRVFRrRTBON3hnIiwiZW1haWwiOiJnYWJyaWVsMTIzQGVtYWlsLmNvbSIsImlhdCI6MTY2MTQ3NDY3MH0.inKxAQWpYCi71UCTUgoNgR3fwaUVghEjugEpOdVMt6E'
+              auth: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ikk0TDEzMDhwRFdRVFRrRTBON3hnIiwiZW1haWwiOiJnYWJyaWVsMTIzQGVtYWlsLmNvbSIsImlhdCI6MTY2MTQ3NDY3MH0.inKxAQWpYCi71UCTUgoNgR3fwaUVghEjugEpOdVMt6E'
             },
             data: body
           };
           
           axios.request(options).then(function (response) {
-            console.log(response.data);
+            console.log(response.data)
+            alert('Viagem criada!');
           }).catch(function (error) {
             console.error(error);
           });
