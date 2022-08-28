@@ -10,7 +10,7 @@ export const ListContainer = styled.div `
         display: inline;
     }
     width: 40%;
-    height: 200px;
+    height: 230px;
     background-color: white;
     margin: 15px;
     border-radius: 10px;
@@ -20,7 +20,7 @@ export const TripsElements = styled.div `
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    height: 55%;
+    height: auto;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
@@ -29,7 +29,7 @@ export const TripsElements = styled.div `
 
 export const MainList = styled.div `
     display: flex;
-    height: 105vh;
+    height: auto;
     background-color:#708090;
     flex-direction: column;
     justify-content: center;
