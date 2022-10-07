@@ -1,11 +1,11 @@
 const converteCelsius = (a, b) => {
   if (
-    (isNaN(a) === true && b != "F") ||
-    (isNaN(a) === true && b != "K") ||
-    (a && b === "")
+    (Number.isInteger(a) == false && b != "F") ||
+    (Number.isInteger(a) === false && b != "K")
   ) {
-    console.log(`Parâmetros inválidos`);
-  } else if (b === "F") {
+    return console.log(`Parâmetros inválidos`);
+  }
+  if (b === "F") {
     const temperatura = (a * 9) / 5 + 32;
     console.log(`${a}°C é ${temperatura}°F`);
   } else if (b === "K") {
@@ -14,4 +14,4 @@ const converteCelsius = (a, b) => {
   }
 };
 
-converteCelsius(30, "K");
+converteCelsius("30", "F");
