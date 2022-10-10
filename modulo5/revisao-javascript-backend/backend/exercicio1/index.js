@@ -1,6 +1,6 @@
 const converteCelsius = (a, b) => {
   if (
-    (Number.isInteger(a) == false && b != "F") ||
+    (Number.isInteger(a) === false && b != "F") ||
     (Number.isInteger(a) === false && b != "K")
   ) {
     return console.log(`Parâmetros inválidos`);
@@ -14,4 +14,4 @@ const converteCelsius = (a, b) => {
   }
 };
 
-converteCelsius("30", "F");
+converteCelsius(30, "F");
