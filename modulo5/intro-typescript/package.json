@@ -1,0 +1,22 @@
+{
+  "name": "intro-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node ./build/index.js",
+    "exercicio1": "tsc && node ./build/exercicio1",
+    "exercicio2": "tsc && node ./build/exercicio2",
+    "exercicio3": "tsc && node ./build/exercicio3",
+    "exercicio4": "tsc && node ./build/exercicio4",
+    "exercicio5": "tsc && node ./build/exercicio5"
+  },
+  "keywords": [],
+  "author": "GM",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.8.4"
+  }
+}
