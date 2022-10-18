@@ -40,6 +40,6 @@ function buscarPostsPorAutor(posts: Post[], autorInformado?: string) {
 }
 
 //Quais são as entradas e saídas dessa função? Copie a função para o mesmo arquivo .ts do array de posts e faça a tipagem necessária.
-// resposta: entrada é o array de posts, a saída é a verificação feita na função, caso  o autor informado exista no array de posts
+// resposta: entrada é o array de posts e o autor passado pelo usuário, a saída é a verificação feita na função, caso  o autor informado exista no array de posts, será exibido no console.
 
 console.log(buscarPostsPorAutor(posts, "Alvo Dumbledore"));

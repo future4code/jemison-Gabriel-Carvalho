@@ -29,6 +29,6 @@ console.table(obterEstatisticas([2, 65, 22, 1, 33]));
 //c) Crie um type chamado amostra de dados, isto é, um objeto com as propriedades numeros e obterEstatisticas.
 
 type AmostraDeDados = {
-  numeros: [2, 3, 4, 5];
-  obterEstatisticas: (numeros: number[]) => {};
+  numeros: [2, 3, 5];
+  obterEstatisticas: (numeros: number) => {};
 };
