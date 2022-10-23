@@ -9,7 +9,9 @@
     "exercicio2": "tsc & node ./build/exercicio2",
     "exercicio3": "tsc & node ./build/exercicio3",
     "exercicio4": "tsc & node ./build/exercicio4",
-    "exercicio5": "tsc & node ./build/exercicio5"
+    "exercicio5": "tsc & node ./build/exercicio5",
+    "exercicio6": "tsc & node ./build/exercicio6",
+    "exercicio7": "tsc & node ./build/exercicio7"
   },
   "keywords": [],
   "author": "",
