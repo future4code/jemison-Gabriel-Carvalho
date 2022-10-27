@@ -38,7 +38,6 @@ app.get("/posts/:id", (req: Request, res: Response) => {
   const postUser = post.filter((post) => {
     return post.id === postId;
   });
-  console.log(postUser);
 
   res.status(200).send(postUser);
 });
