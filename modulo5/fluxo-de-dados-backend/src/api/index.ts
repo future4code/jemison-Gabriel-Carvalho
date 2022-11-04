@@ -50,13 +50,19 @@ app.put("/produtos/:id/price", (req: Request, res: Response) => {
 });
 
 app.delete("/produtos/:id", (req: Request, res: Response) => {
-  const id = req.params.id;
+  const id = req.query.id;
+  const novoArray: Produto[] = [];
+
+  console.log(id);
 
   for (let i = 0; i < produtos.length; i++) {
     if (produtos[i].id === id) {
       produtos.splice(i, 1);
     }
+    {
+      novoArray.push(produtos[i]);
+    }
   }
 
-  res.send(produtos);
+  res.status(200).send(novoArray);
 });
