@@ -59,17 +59,24 @@ app.listen(3003, () => {
 
 //b. Altere este endpoint para que ele devolva uma mensagem de erro caso nenhum usuário tenha sido encontrado.
 
-app.post("/addUser", (req: Request, res: Response) => {
-  let { id, name, email, type, age }: Usuario = req.body;
+// app.post("/addUser", (req: Request, res: Response) => {
+//   let { id, name, email, type, age }: Usuario = req.body;
 
-  const novoUsuario = {
-    id,
-    name,
-    email,
-    type,
-    age,
-  };
+//   const novoUsuario = {
+//     id,
+//     name,
+//     email,
+//     type,
+//     age,
+//   };
 
-  users.push(novoUsuario);
-  res.status(200).send(users);
-});
+//   users.push(novoUsuario);
+//   res.status(200).send(users);
+// });
+
+
+// a. Mude o método do endpoint para `PUT`. O que mudou?
+// resposta: o método put é usado para editar os dados, já o post é utilizado para criar. 
+
+// b. Você considera o método `PUT` apropriado para esta transação? Por quê?
+// resposta: não porque ele edita os dados, o que não era o propósito do exercicio
