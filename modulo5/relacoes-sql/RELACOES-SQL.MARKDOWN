@@ -20,8 +20,11 @@ e) não pode apagar porque ela possui uma restrição de chave estrangeira.
 
 a) essa tabela estabelece uma relação entre filmes e atores.
 
-b)
 
 c)Error Code: 1452. Não posso adicionar uma linha, pois os id's não existem
 
 d)Error Code: 1451. Não posso apagar uma linha pai, pois tem uma retição de chave estrageira
+
+## Exercicio 3
+
+
